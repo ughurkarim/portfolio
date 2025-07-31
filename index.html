@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
+  <link rel="icon" type="image/svg" href="favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <nav class="navbar">
@@ -13,17 +15,70 @@
       <img src="logo.png" alt="Logo">
     </div>
     <ul class="nav-links">
-      <li><a href="#resume">Resume</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <section id="resume">Resume Section</section>
-  <section id="about">About Section</section>
-  <section id="projects">Projects Section</section>
-  <section id="contact">Contact Section</section>
+  <section id="about">
+    <div class="about-content">
+      <div class="about-header">
+        <p class="about-intro">
+          Hi! I’m a student at <span class="highlight">UCLA</span> studying computer science and mathematics.
+        </p>
+        <div class="social-icons top-icons">
+          <a href="https://github.com/ughurkarim" target="_blank" class="github"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:ughurkarim@ucla.edu" class="email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <p class="about-extra">
+        In my free time, I spend time with my little sister, discover new books, hike trails, work out, and listen to music. 
+        I’m excited to keep growing and hope to use what I learn to make a positive difference in the world.
+      </p>
+      <p class="about-current">
+        Currently I am <span id="typing-text"></span><span class="cursor">|</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Resume Section</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="wip.png" alt="Project 1">
+        <h3>Project One</h3>
+        <p>Coming soon.</p>
+        <a href="#" target="_blank" class="btn">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="wip.png" alt="Project 2">
+        <h3>Project Two</h3>
+        <p>Coming soon.</p>
+        <a href="#" target="_blank" class="btn">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="wip.png" alt="Project 3">
+        <h3>Project Three</h3>
+        <p>Coming soon.</p>
+        <a href="#" target="_blank" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons footer-icons">
+      <a href="https://github.com/ughurkarim" target="_blank" class="github"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:ughurkarim@ucla.edu" class="email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
