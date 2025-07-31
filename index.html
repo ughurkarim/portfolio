@@ -12,34 +12,43 @@
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="logo.png" alt="Logo">
+      <h1>Ughur Karim</h1>
     </div>
+    <button class="menu-toggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#projects">Projects</a></li>
     </ul>
+    <button id="theme-toggle" aria-label="Toggle Mode">
+      <i class="fas fa-moon"></i>
+    </button>
   </nav>
 
   <section id="about">
     <div class="about-content">
-      <div class="about-header">
+      <div class="about-left">
         <p class="about-intro">
           Hi! I’m a student at <span class="highlight">UCLA</span> studying computer science and mathematics.
         </p>
-        <div class="social-icons top-icons">
+        <p class="about-extra">
+          In my free time, I spend time with my little sister, discover new books, hike trails, work out, and listen to music. 
+          I’m excited to keep growing and hope to use what I learn to make a positive difference in the world.
+        </p>
+        <p class="about-current">
+          Currently I am <span id="typing-text"></span><span class="cursor">|</span>
+        </p>
+      </div>
+      <div class="about-right">
+        <img src="placeholder.jpg" alt="Portrait" class="portrait">
+        <div class="social-icons right-icons">
           <a href="https://github.com/ughurkarim" target="_blank" class="github"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
           <a href="mailto:ughurkarim@ucla.edu" class="email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
-      <p class="about-extra">
-        In my free time, I spend time with my little sister, discover new books, hike trails, work out, and listen to music. 
-        I’m excited to keep growing and hope to use what I learn to make a positive difference in the world.
-      </p>
-      <p class="about-current">
-        Currently I am <span id="typing-text"></span><span class="cursor">|</span>
-      </p>
     </div>
   </section>
 
