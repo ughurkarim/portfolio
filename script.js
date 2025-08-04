@@ -1,9 +1,9 @@
 const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('shrink');
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add("show");
   } else {
-    navbar.classList.remove('shrink');
+    backToTopBtn.classList.remove("show");
   }
 });
 
@@ -26,7 +26,8 @@ const words = [
   "browsing LinkedIn.",
   "spending time with loved ones.",
   "collaborating with peers.",
-  "going on a run."
+  "going on a run.",
+  "drinking tea."
 ];
 const typingText = document.getElementById("typing-text");
 let wordIndex = 0;
@@ -91,4 +92,28 @@ const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
+});
+
+const backToTopBtn = document.getElementById("back-to-top");
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const navLinkEls = document.querySelectorAll('.nav-links li a');
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinkEls.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
 });

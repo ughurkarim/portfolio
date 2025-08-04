@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
-  <link rel="icon" type="image/svg" href="favicon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/svg" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
   <nav class="navbar">
@@ -19,8 +19,8 @@
     </button>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
     </ul>
     <button id="theme-toggle" aria-label="Toggle Mode">
       <i class="fas fa-moon"></i>
@@ -52,31 +52,44 @@
     </div>
   </section>
 
-  <section id="resume">
-    <h2>Resume</h2>
-    <p>Resume Section</p>
-  </section>
-
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <img src="wip.png" alt="Project 1">
-        <h3>Project One</h3>
+        <img src="spotify.png" alt="spotiFeel" class="project-img">
+        <h3>spotiFeel</h3>
         <p>Coming soon.</p>
         <a href="#" target="_blank" class="btn">View Project</a>
       </div>
       <div class="project-card">
-        <img src="wip.png" alt="Project 2">
+        <img src="wip.png" alt="Project 2" class="project-img">
         <h3>Project Two</h3>
         <p>Coming soon.</p>
         <a href="#" target="_blank" class="btn">View Project</a>
       </div>
       <div class="project-card">
-        <img src="wip.png" alt="Project 3">
+        <img src="wip.png" alt="Project 3" class="project-img">
         <h3>Project Three</h3>
         <p>Coming soon.</p>
         <a href="#" target="_blank" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="practitioner.png" alt="AWS Cloud Practitioner Badge" class="aws-badge">
+        <h3>AWS Certified Cloud Practitioner</h3>
+        <p>Validated understanding of AWS Cloud concepts and services.</p>
+        <a href="https://www.credly.com/badges/31e85727-f9b4-46eb-b91f-20a36425c7d0/public_url" target="_blank" class="btn">View Credential</a>
+      </div>
+      <div class="project-card">
+        <img src="solutions.png" alt="AWS Solutions Architect Badge" class="aws-badge">
+        <h3>AWS Certified Solutions Architect – Associate</h3>
+        <p>Proficient in designing distributed systems on AWS.</p>
+        <a href="https://www.credly.com/badges/3bf98133-3b7c-454c-99ca-268a3b7a9dc5/public_url" target="_blank" class="btn">View Credential</a>
       </div>
     </div>
   </section>
@@ -88,6 +101,10 @@
       <a href="mailto:ughurkarim@ucla.edu" class="email"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
+
+  <button id="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <script src="script.js"></script>
 </body>

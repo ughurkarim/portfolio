@@ -436,4 +436,107 @@ img {
   section {
     padding: 100px 20px 30px;
   }
+
+}
+
+.project-card img.aws-badge {
+  width: 150px !important;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.project-card img.project-img {
+  height: 150px;
+  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  transform: scale(1.1);
+  background-color: #e6b933;
+}
+
+.nav-links li a.active {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+body.fun-mode .highlight,
+body.fun-mode .nav-links li a,
+body.fun-mode .nav-links li a.active,
+body.fun-mode .project-card h3,
+body.fun-mode .project-card .btn {
+  background: linear-gradient(90deg, #F4C542, #E6B933, #1A4E7D, #2774AE, #F4C542);
+  background-size: 1200% 1200%;
+  animation: gradientShiftReverse 15s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.fun-mode #back-to-top {
+  background: linear-gradient(270deg, #F4C542, #E6B933, #1A4E7D, #2774AE, #F4C542);
+  background-size: 1200% 1200%;
+  animation: gradientShift 15s ease infinite;
+  color: #000;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  border: none;
+}
+
+body.fun-mode .project-card .btn {
+  border: none;
+  background: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+body.fun-mode .project-card .btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.fun-mode .logo h1 {
+  background: linear-gradient(90deg, #F4C542, #E6B933, #1A4E7D, #2774AE, #F4C542);
+  background-size: 1200% 1200%;
+  animation: gradientShiftReverse 15s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.fun-mode .about-extra,
+body.fun-mode .about-current,
+body.fun-mode .about-intro {
+  color: var(--text-color);
 }
