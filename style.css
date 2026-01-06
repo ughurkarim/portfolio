@@ -516,12 +516,11 @@ body.fun-mode #back-to-top {
 }
 
 body.fun-mode .project-card .btn {
-  border: none;
-  background: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-color);
+  -webkit-text-fill-color: unset;
+  backdrop-filter: blur(10px);
 }
 
 body.fun-mode .project-card .btn:hover {
@@ -541,4 +540,45 @@ body.fun-mode .about-extra,
 body.fun-mode .about-current,
 body.fun-mode .about-intro {
   color: var(--text-color);
+}
+
+.experience-card {
+  text-align: center;
+}
+
+#experience .experience-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-logo-center {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 18px;
+}
+
+.experience-meta-center {
+  margin: -6px 0 14px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.experience-summary-center {
+  font-size: 1.05rem;
+  margin: 0 auto 16px;
+  max-width: 720px;
+  opacity: 0.95;
+}
+
+.experience-roles-center p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.experience-tech-center {
+  margin-top: 14px;
+  font-size: 1rem;
+  opacity: 0.9;
 }

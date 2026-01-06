@@ -1,4 +1,3 @@
-const navbar = document.querySelector('.navbar');
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
     backToTopBtn.classList.add("show");
