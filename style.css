@@ -246,8 +246,8 @@ section p {
 }
 
 .portrait {
-  width: 150px;
-  height: 150px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
