@@ -546,11 +546,6 @@ body.fun-mode .about-intro {
   text-align: center;
 }
 
-#experience .experience-card {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 .experience-logo-center {
   width: 120px;
   height: 120px;
