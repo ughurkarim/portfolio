@@ -4,9 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="icon" type="image/svg" href="favicon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <title>Ughur Karim | Software Engineer</title>
+  <meta
+    name="description"
+    content="Ughur Karim's portfolio: projects, experience, and a little bit about him."
+  />
+  <meta name="author" content="Ughur Karim" />
+  <meta property="og:title" content="Ughur Karim | Software Engineer" />
+  <meta
+    property="og:description"
+    content="Projects, experience, and a little bit about Ughur Karim."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="placeholder.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -16,14 +28,15 @@
     <div class="logo">
       <h1>Ughur Karim</h1>
     </div>
-    <button class="menu-toggle" aria-label="Menu">
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
       <i class="fas fa-bars"></i>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#credentials">Credentials</a></li>
     </ul>
     <button id="theme-toggle" aria-label="Toggle Mode">
       <i class="fas fa-moon"></i>
@@ -33,131 +46,186 @@
   <section id="about">
     <div class="about-content">
       <div class="about-left">
+        <p class="eyebrow">Hi, I’m Ughur</p>
         <p class="about-intro">
-          Hi! I’m a student at <span class="highlight">UCLA</span> studying computer science and mathematics.
+          I’m a student at <span class="highlight">UCLA</span> studying computer science and mathematics.
         </p>
         <p class="about-extra">
-          In my free time, I spend time with my little sister, discover new books, hike trails, work out, and listen to
-          music.
-          I’m excited to keep growing and hope to use what I learn to make a positive difference in the world.
+          I like building apps with friends, learning by doing, and turning random thoughts into real things people can
+          try. Outside of coding, I spend time with my little sister, discover new books, hike trails, work out, and
+          listen to music.
         </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="mailto:ughurkarim@g.ucla.edu" class="btn secondary">Say Hi</a>
+        </div>
         <p class="about-current">
           Currently I am <span id="typing-text"></span><span class="cursor">|</span>
         </p>
       </div>
       <div class="about-right">
-        <img src="placeholder.png" alt="Portrait" class="portrait">
+        <img src="placeholder.png" alt="Ughur Karim portrait" class="portrait">
         <div class="social-icons right-icons">
-          <a href="https://github.com/ughurkarim" target="_blank" class="github"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" class="linkedin"><i
+          <a href="https://github.com/ughurkarim" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i
               class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:ughurkarim@ucla.edu" class="email"><i class="fas fa-envelope"></i></a>
+          <a href="mailto:ughurkarim@g.ucla.edu" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
   </section>
 
   <section id="experience">
-    <h2>Experience</h2>
+    <div class="experience-layout">
+      <div class="experience-column">
+        <h2>Experience</h2>
 
-    <div class="projects-grid">
-      <div class="project-card experience-card">
-        <img src="quillyLogo.svg" alt="Quilly logo" class="experience-logo-center" />
+        <div class="experience-timeline">
+          <article class="experience-item is-featured">
+            <span class="experience-dot" aria-hidden="true"></span>
+            <div class="experience-content">
+              <div class="experience-heading">
+                <img src="quillyLogo.jpeg" alt="Quilly logo" class="experience-logo" />
+                <div>
+                  <h3>Quilly</h3>
+                  <p>Lead Software Engineer · Intern</p>
+                </div>
+                <span class="date-pill">Oct 2025 – Jun 2026</span>
+              </div>
+              <p>Built postcard and compliment-card tools with the team and mentored 3 interns.</p>
+              <p class="experience-tech">TypeScript · React · Next.js · Supabase</p>
+            </div>
+          </article>
 
-        <h3>Quilly</h3>
-        <p class="experience-meta-center">Berkeley, CA</p>
-
-        <p class="experience-summary-center">
-          Early-stage startup building a female based social media platform
-        </p>
-
-        <div class="experience-roles-center">
-          <p><strong>Software Development Lead</strong> · Dec 2025 – Present</p>
-          <p><strong>Full Stack Software Engineering Intern</strong> · Oct 2025 – Dec 2025</p>
+          <article class="experience-item is-dimmed">
+            <span class="experience-dot" aria-hidden="true"></span>
+            <div class="experience-content">
+              <div class="experience-heading">
+                <img src="Nomie.png" alt="Nomie logo" class="experience-logo" />
+                <div>
+                  <h3>Creative Labs / Nomie</h3>
+                  <p>Software Engineer</p>
+                </div>
+                <span class="date-pill">Jan 2026 – Apr 2026</span>
+              </div>
+              <p>Worked on Nomie, a SwiftUI app for understanding screen time and reflecting on habits.</p>
+              <p class="experience-tech">SwiftUI · FamilyControls · OpenAI APIs · TestFlight</p>
+            </div>
+          </article>
         </div>
-
-        <p class="experience-tech-center">
-          <strong>Stack:</strong> TypeScript, React, Next.js, Prisma, PostgreSQL
-        </p>
       </div>
 
-      <div class="project-card experience-card">
-        <img src="Nomie.png" alt="Nomie logo" class="experience-logo-center" />
+      <div class="education-column">
+        <h2>Education</h2>
 
-        <h3>Nomie</h3>
-        <p class="experience-meta-center">Los Angeles, CA</p>
+        <div class="education-card">
+          <div class="education-card-top">
+            <img src="UCLA.png" alt="UCLA logo" class="education-logo" />
+            <span class="date-pill education-date">Class of 2027</span>
+          </div>
 
-        <p class="experience-summary-center">
-          Led and developed a reflective screentime iOS application
-        </p>
-
-        <div class="experience-roles-center">
-          <p><strong>Developer</strong> · Jan 2026 – Present</p>
+          <div class="education-body">
+            <h3>UCLA</h3>
+            <p>BS in Mathematics of Computation</p>
+          </div>
         </div>
-
-        <p class="experience-tech-center">
-          <strong>Stack:</strong> Swift, Supabase, TestFlight
-        </p>
       </div>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="Spotify.png" alt="spotiFeel" class="project-img">
-        <h3>spotiFeel</h3>
-        <p>A Spotify dashboard that generates playlists by detecting your mood</p>
-        <p><strong>Tech:</strong> Python, Flask, Spotify API, Last.fm API, YouTube API</p>
+    <div class="projects-list">
+      <article class="project-row">
+        <img src="UCLA.png" alt="Bruin Food logo" class="project-row-img">
+        <div class="project-row-content">
+          <h3>Bruin Food</h3>
+          <p>A campus food app for checking dining halls and coordinating delivery between UCLA students.</p>
+          <p class="project-tech">React Native · Expo · TypeScript · Supabase</p>
+        </div>
+        <a href="https://github.com/MichaelSuarezR/B-Food" target="_blank" rel="noopener" class="btn">View Project</a>
+      </article>
+
+      <article class="project-row">
+        <img src="Spotify.png" alt="spotiFeel" class="project-row-img">
+        <div class="project-row-content">
+          <h3>spotiFeel</h3>
+          <p>A music dashboard that makes playlists and visuals from your Spotify listening.</p>
+          <p class="project-tech">Python · Flask · JavaScript · Spotify API</p>
+        </div>
         <a href="https://spoti-feel.vercel.app/" target="_blank" rel="noopener" class="btn">View Project</a>
-      </div>
-      <div class="project-card">
-        <img src="CR.png" alt="Clash Royale Deck Builder" class="project-img">
-        <h3>Clash Royale Deck Builder</h3>
-        <p>A desktop deck-building assistant for Clash Royale</p>
-        <p><strong>Tech:</strong> C++ (Qt Widgets)</p>
+      </article>
+
+      <article class="project-row">
+        <img src="CR.png" alt="Clash Royale Deck Builder" class="project-row-img">
+        <div class="project-row-content">
+          <h3>Clash Royale Deck Builder</h3>
+          <p>A C++ desktop tool for experimenting with Clash Royale decks.</p>
+          <p class="project-tech">C++ · Qt Widgets</p>
+        </div>
         <a href="https://youtu.be/HkP-oIaV3Xc" target="_blank" rel="noopener" class="btn">View Project</a>
+      </article>
+
+      <article class="project-row">
+        <img src="bias-by-us-logo.png" alt="Bias by Us logo" class="project-row-img">
+        <div class="project-row-content">
+          <h3>Bias by Us</h3>
+          <p>An ACM project that teaches students about algorithmic bias through real-world examples.</p>
+          <p class="project-tech">React · React Router · Netlify</p>
+        </div>
+        <a href="https://bias-by-us.netlify.app/" target="_blank" rel="noopener" class="btn">View Project</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <p>Python, TypeScript, C/C++, Java, Swift, JavaScript, HTML/CSS</p>
       </div>
-      <div class="project-card">
-        <img src="UCLA.png" alt="Bruin Food logo" class="project-img">
-        <h3>Bruin Food</h3>
-        <p>
-          A full-stack mobile app enabling UCLA students to order from campus dining halls or deliver to other Bruins
-        </p>
-        <p><strong>Tech:</strong> React, TypeScript, Next.js, Supabase</p>
-        <a href="#" class="btn">Media Coming Soon</a>
+      <div class="skill-group">
+        <h3>Frameworks</h3>
+        <p>React, Next.js, React Native, Expo, Flask, Node.js, Qt</p>
+      </div>
+      <div class="skill-group">
+        <h3>Tools</h3>
+        <p>Git, AWS, Vercel, Netlify, PostgreSQL, Supabase, Figma</p>
+      </div>
+      <div class="skill-group">
+        <h3>Libraries</h3>
+        <p>pandas, NumPy, Prisma, NextAuth, PyTorch</p>
       </div>
     </div>
   </section>
 
-
-  <section id="resume">
-    <h2>Resume</h2>
+  <section id="credentials">
+    <h2>Credentials</h2>
     <div class="projects-grid">
       <div class="project-card">
         <img src="practitioner.png" alt="AWS Cloud Practitioner Badge" class="aws-badge">
         <h3>AWS Certified Cloud Practitioner</h3>
-        <p>Validated understanding of AWS Cloud concepts and services.</p>
+        <p>Covers the basics of AWS cloud services.</p>
         <a href="https://www.credly.com/badges/31e85727-f9b4-46eb-b91f-20a36425c7d0/public_url" target="_blank"
-          class="btn">View Credential</a>
+          rel="noopener" class="btn">View Credential</a>
       </div>
       <div class="project-card">
         <img src="solutions.png" alt="AWS Solutions Architect Badge" class="aws-badge">
         <h3>AWS Certified Solutions Architect – Associate</h3>
-        <p>Proficient in designing distributed systems on AWS.</p>
+        <p>Covers designing practical systems on AWS.</p>
         <a href="https://www.credly.com/badges/3bf98133-3b7c-454c-99ca-268a3b7a9dc5/public_url" target="_blank"
-          class="btn">View Credential</a>
+          rel="noopener" class="btn">View Credential</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="social-icons footer-icons">
-      <a href="https://github.com/ughurkarim" target="_blank" class="github"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" class="linkedin"><i
+      <a href="https://github.com/ughurkarim" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i
           class="fab fa-linkedin-in"></i></a>
-      <a href="mailto:ughurkarim@ucla.edu" class="email"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:ughurkarim@g.ucla.edu" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
 
