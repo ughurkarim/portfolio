@@ -93,16 +93,44 @@ function setIcon(theme) {
 }
 
 if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("active");
+  const setMenuState = isOpen => {
+    navLinks.classList.toggle("active", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Menu");
+    menuToggle.innerHTML = isOpen
+      ? '<i class="fas fa-xmark"></i>'
+      : '<i class="fas fa-bars"></i>';
+  };
+
+  menuToggle.addEventListener("click", event => {
+    event.stopPropagation();
+    setMenuState(!navLinks.classList.contains("active"));
   });
 
   navLinkEls.forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", () => setMenuState(false));
+  });
+
+  document.addEventListener("click", event => {
+    if (window.innerWidth <= 768 &&
+        navLinks.classList.contains("active") &&
+        !navLinks.contains(event.target) &&
+        !menuToggle.contains(event.target)) {
+      setMenuState(false);
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && navLinks.classList.contains("active")) {
+      setMenuState(false);
+      menuToggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768 && navLinks.classList.contains("active")) {
+      setMenuState(false);
+    }
   });
 }
 
