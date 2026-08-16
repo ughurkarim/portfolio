@@ -36,7 +36,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#credentials">Certifications</a></li>
     </ul>
     <button id="theme-toggle" aria-label="Toggle Mode">
       <i class="fas fa-moon"></i>
@@ -51,8 +51,8 @@
           I’m a student at <span class="highlight">UCLA</span> studying computer science and mathematics.
         </p>
         <p class="about-extra">
-          I like building apps with friends, learning by doing, and turning random thoughts into real things people can
-          try. Outside of coding, I spend time with my little sister, discover new books, hike trails, work out, and
+          I like building apps, learning by doing, and turning random thoughts into real things people can
+          try. Outside of coding, I spend time with my little sister, read books, hike trails, work out, and
           listen to music.
         </p>
         <div class="hero-actions">
@@ -88,12 +88,12 @@
                 <img src="quillyLogo.jpeg" alt="Quilly logo" class="experience-logo" />
                 <div>
                   <h3>Quilly</h3>
-                  <p>Lead Software Engineer · Intern</p>
+                  <p>Software Engineer</p>
                 </div>
                 <span class="date-pill">Oct 2025 – Jun 2026</span>
               </div>
-              <p>Built postcard and compliment-card tools with the team and mentored 3 interns.</p>
-              <p class="experience-tech">TypeScript · React · Next.js · Supabase</p>
+              <p>Led the launch of Quilly’s Compliment Machine for 2,000+ visitors, shipped a full-stack postcard platform used by 400+ users, and mentored 3 engineering interns.</p>
+              <p class="experience-tech">Next.js · React · TypeScript · Prisma · Supabase</p>
             </div>
           </article>
 
@@ -108,8 +108,8 @@
                 </div>
                 <span class="date-pill">Jan 2026 – Apr 2026</span>
               </div>
-              <p>Worked on Nomie, a SwiftUI app for understanding screen time and reflecting on habits.</p>
-              <p class="experience-tech">SwiftUI · FamilyControls · OpenAI APIs · TestFlight</p>
+              <p>Led a 4-developer team on Nomie, a SwiftUI digital-wellness app that delivered personalized habit recommendations to 150+ beta users.</p>
+              <p class="experience-tech">SwiftUI · FamilyControls · OpenAI APIs · Supabase</p>
             </div>
           </article>
         </div>
@@ -125,8 +125,11 @@
           </div>
 
           <div class="education-body">
-            <h3>UCLA</h3>
-            <p>BS in Mathematics of Computation</p>
+            <p class="education-school">University of California, Los Angeles</p>
+            <h3>B.S. Mathematics of Computation</h3>
+            <div class="education-divider" aria-hidden="true"></div>
+            <p class="education-label">Relevant Coursework</p>
+            <p class="education-coursework">Data Structures &amp; Algorithms · Object-Oriented Programming · Computer Organization · Machine Learning · Probability &amp; Statistics · Optimization · Linear Algebra · Numerical Methods</p>
           </div>
         </div>
       </div>
@@ -135,19 +138,46 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="projects-list">
-      <article class="project-row">
-        <img src="worldcup.jpeg" alt="TrophyXI logo" class="project-row-img">
-        <div class="project-row-content">
-          <h3>Trophy XI</h3>
-          <p>Draft tournament-specific World Cup legends, build an ultimate XI, and compete against historic champions in seeded match simulations.</p>
-          <p class="project-tech">Next.js · React · TypeScript · AWS S3 · CloudFront · Playwright</p>
+
+    <div class="headline-projects simple-headline-projects">
+      <article class="headline-project-card simple-headline-card">
+        <a href="https://trophyxi.com/" target="_blank" rel="noopener" class="headline-project-media" aria-label="Open TrophyXI live site">
+          <img src="images/trophyxi.png" alt="TrophyXI product screenshot" />
+        </a>
+        <div class="headline-project-copy">
+          <h3>TrophyXI</h3>
+          <p class="project-summary">Draft tournament-specific World Cup legends, build an ultimate XI, and compete against historic champions in seeded match simulations.</p>
+          <p class="project-tech">Next.js · React · TypeScript · AWS S3 · CloudFront · Vercel</p>
+          <a href="https://trophyxi.com/" target="_blank" rel="noopener" class="text-link">View project <span>↗</span></a>
         </div>
-        <a href="https://trophyxi.com/" target="_blank" rel="noopener" class="btn">View Project</a>
       </article>
 
-      <article class="project-row">
-        <img src="UCLA.png" alt="Bruin Food logo" class="project-row-img">
+      <article class="headline-project-card simple-headline-card">
+        <a href="https://spoti-feel.vercel.app/" target="_blank" rel="noopener" class="headline-project-media" aria-label="Open spotiFeel live site">
+          <img src="images/spotifeel.png" alt="spotiFeel product screenshot" />
+        </a>
+        <div class="headline-project-copy">
+          <h3>SpotiFeel</h3>
+          <p class="project-summary">A music analytics app that turns Spotify listening data into recommendations, generated playlists, and on-demand reports.</p>
+          <p class="project-tech">Python · Flask · Redis · JavaScript · Spotify API · Vercel</p>
+          <a href="https://spoti-feel.vercel.app/" target="_blank" rel="noopener" class="text-link">View project <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="projects-list supporting-projects-list">
+      <article class="project-row compact-project-row">
+        <img src="CR.png" alt="Clash Royale Deck Builder icon" class="project-row-img">
+        <div class="project-row-content">
+          <h3>Clash Royale Deck Builder</h3>
+          <p>A C++ desktop app for building and experimenting with Clash Royale decks.</p>
+          <p class="project-tech">C++ · Qt Widgets</p>
+        </div>
+        <a href="https://youtu.be/HkP-oIaV3Xc" target="_blank" rel="noopener" class="btn">View Project</a>
+      </article>
+
+      <article class="project-row compact-project-row">
+        <img src="UCLA.png" alt="Bruin Food icon" class="project-row-img">
         <div class="project-row-content">
           <h3>Bruin Food</h3>
           <p>A campus food app for checking dining halls and coordinating delivery between UCLA students.</p>
@@ -156,28 +186,8 @@
         <a href="https://github.com/MichaelSuarezR/B-Food" target="_blank" rel="noopener" class="btn">View Project</a>
       </article>
 
-      <article class="project-row">
-        <img src="Spotify.png" alt="spotiFeel" class="project-row-img">
-        <div class="project-row-content">
-          <h3>spotiFeel</h3>
-          <p>A music dashboard that makes playlists and visuals from your Spotify listening.</p>
-          <p class="project-tech">Python · Flask · JavaScript · Spotify API</p>
-        </div>
-        <a href="https://spoti-feel.vercel.app/" target="_blank" rel="noopener" class="btn">View Project</a>
-      </article>
-
-      <article class="project-row">
-        <img src="CR.png" alt="Clash Royale Deck Builder" class="project-row-img">
-        <div class="project-row-content">
-          <h3>Clash Royale Deck Builder</h3>
-          <p>A C++ desktop tool for experimenting with Clash Royale decks.</p>
-          <p class="project-tech">C++ · Qt Widgets</p>
-        </div>
-        <a href="https://youtu.be/HkP-oIaV3Xc" target="_blank" rel="noopener" class="btn">View Project</a>
-      </article>
-
-      <article class="project-row">
-        <img src="bias-by-us-logo.png" alt="Bias by Us logo" class="project-row-img">
+      <article class="project-row compact-project-row">
+        <img src="acm-logo.png" alt="Bias by Us icon" class="project-row-img">
         <div class="project-row-content">
           <h3>Bias by Us</h3>
           <p>An ACM project that teaches students about algorithmic bias through real-world examples.</p>
@@ -190,28 +200,24 @@
 
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skills-grid">
+    <div class="skills-grid updated-tech-grid">
       <div class="skill-group">
         <h3>Languages</h3>
-        <p>Python, TypeScript, C/C++, Java, Swift, JavaScript, HTML/CSS</p>
+        <p>Python, TypeScript, C++, C, Java, Swift, JavaScript, HTML/CSS</p>
       </div>
       <div class="skill-group">
-        <h3>Frameworks</h3>
-        <p>React, Next.js, React Native, Expo, Flask, Node.js, Qt</p>
+        <h3>Frameworks &amp; Libraries</h3>
+        <p>React, Next.js, React Native, Expo, Flask, PyTorch, Prisma, NextAuth, pandas, NumPy, Qt</p>
       </div>
       <div class="skill-group">
-        <h3>Tools</h3>
-        <p>Git, AWS, Vercel, Netlify, PostgreSQL, Supabase, Figma</p>
-      </div>
-      <div class="skill-group">
-        <h3>Libraries</h3>
-        <p>pandas, NumPy, Prisma, NextAuth, PyTorch</p>
+        <h3>Technologies &amp; Tools</h3>
+        <p>Node.js, PostgreSQL, Supabase, AWS S3, CloudFront, Cloudflare, Vercel, Git, Unix, Figma</p>
       </div>
     </div>
   </section>
 
   <section id="credentials">
-    <h2>Credentials</h2>
+    <h2>Certifications</h2>
     <div class="projects-grid">
       <div class="project-card">
         <img src="practitioner.png" alt="AWS Cloud Practitioner Badge" class="aws-badge">

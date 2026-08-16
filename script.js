@@ -21,10 +21,8 @@ sections.forEach(section => observer.observe(section));
 const words = [
   "learning new things.",
   "working on projects.",
-  "improving my coding skills.",
-  "browsing LinkedIn.",
-  "spending time with loved ones.",
   "collaborating with peers.",
+  "spending time with loved ones.",
   "going on a run.",
   "drinking tea."
 ];
