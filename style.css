@@ -2111,8 +2111,16 @@ body.light-mode .selected-project-card:hover {
   line-height: 1.6;
 }
 
-.simple-headline-card .text-link {
+.simple-headline-card .project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
   margin-top: 14px;
+}
+
+.simple-headline-card .project-actions .text-link {
+  margin-top: 0;
 }
 
 .supporting-projects-list {
