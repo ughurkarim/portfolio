@@ -21,6 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 
 <body>
@@ -37,6 +38,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#credentials">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button id="theme-toggle" aria-label="Toggle Mode">
       <i class="fas fa-moon"></i>
@@ -51,8 +53,8 @@
           I’m a student at <span class="highlight">UCLA</span> studying computer science and mathematics.
         </p>
         <p class="about-extra">
-          I like building apps, learning by doing, and turning random thoughts into real things people can
-          try. Outside of coding, I spend time with my little sister, read books, hike trails, work out, and
+          I like building apps, learning by doing, and turning random thoughts into real things people can try. Outside of coding,
+          I spend time with my little sister, read books, hike trails, work out, and
           listen to music.
         </p>
         <div class="hero-actions">
@@ -65,6 +67,7 @@
       </div>
       <div class="about-right">
         <img src="portrait.png" alt="Ughur Karim portrait" class="portrait">
+        <p class="portrait-meta">Computer Science + Mathematics · Software Engineering · Class of 2027</p>
         <div class="social-icons right-icons">
           <a href="https://github.com/ughurkarim" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i
@@ -138,6 +141,7 @@
 
   <section id="projects">
     <h2>Projects</h2>
+    <p class="featured-project-label">Featured projects</p>
 
     <div class="headline-projects simple-headline-projects">
       <article class="headline-project-card simple-headline-card">
@@ -145,6 +149,7 @@
           <img src="images/trophyxi.png" alt="TrophyXI product screenshot" />
         </a>
         <div class="headline-project-copy">
+          <p class="project-card-eyebrow">Featured project</p>
           <h3>TrophyXI</h3>
           <p class="project-summary">Draft tournament-specific World Cup legends, build an ultimate XI, and compete against historic champions in seeded match simulations.</p>
           <p class="project-tech">Next.js · React · TypeScript · AWS S3 · CloudFront · Vercel</p>
@@ -153,10 +158,11 @@
       </article>
 
       <article class="headline-project-card simple-headline-card">
-        <a href="https://spoti-feel.vercel.app/" target="_blank" rel="noopener" class="headline-project-media" aria-label="Open spotiFeel live site">
+        <a href="https://spoti-feel.vercel.app/" target="_blank" rel="noopener" class="headline-project-media" aria-label="Open SpotiFeel live site">
           <img src="images/spotifeel.png" alt="spotiFeel product screenshot" />
         </a>
         <div class="headline-project-copy">
+          <p class="project-card-eyebrow">Featured project</p>
           <h3>SpotiFeel</h3>
           <p class="project-summary">A music analytics app that turns Spotify listening data into recommendations, generated playlists, and on-demand reports.</p>
           <p class="project-tech">Python · Flask · Redis · JavaScript · Spotify API · Vercel</p>
@@ -165,6 +171,7 @@
       </article>
     </div>
 
+    <p class="more-projects-label">More projects</p>
     <div class="projects-list supporting-projects-list">
       <article class="project-row compact-project-row">
         <img src="CR.png" alt="Clash Royale Deck Builder icon" class="project-row-img">
@@ -199,50 +206,56 @@
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid updated-tech-grid">
-      <div class="skill-group">
-        <h3>Languages</h3>
-        <p>Python, TypeScript, C++, C, Java, Swift, JavaScript, HTML/CSS</p>
+    <h2>Tech Stack</h2>
+    <div class="tech-marquees">
+      <div class="tech-marquee tech-marquee--forward" aria-label="Languages, frameworks, and libraries">
+        <div class="tech-marquee-track" data-tech-row="primary"></div>
       </div>
-      <div class="skill-group">
-        <h3>Frameworks &amp; Libraries</h3>
-        <p>React, Next.js, React Native, Expo, Flask, PyTorch, Prisma, NextAuth, pandas, NumPy, Qt</p>
-      </div>
-      <div class="skill-group">
-        <h3>Technologies &amp; Tools</h3>
-        <p>Node.js, PostgreSQL, Supabase, AWS S3, CloudFront, Cloudflare, Vercel, Git, Unix, Figma</p>
+      <div class="tech-marquee tech-marquee--reverse" aria-label="Technologies and tools">
+        <div class="tech-marquee-track" data-tech-row="secondary"></div>
       </div>
     </div>
   </section>
 
   <section id="credentials">
     <h2>Certifications</h2>
-    <div class="projects-grid">
-      <div class="project-card">
+    <div class="credential-grid">
+      <article class="credential-card">
         <img src="practitioner.png" alt="AWS Cloud Practitioner Badge" class="aws-badge">
-        <h3>AWS Certified Cloud Practitioner</h3>
-        <p>Covers the basics of AWS cloud services.</p>
-        <a href="https://www.credly.com/badges/31e85727-f9b4-46eb-b91f-20a36425c7d0/public_url" target="_blank"
-          rel="noopener" class="btn">View Credential</a>
-      </div>
-      <div class="project-card">
+        <div class="credential-copy">
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p>Understanding the foundations of AWS cloud services.</p>
+          <a href="https://www.credly.com/badges/31e85727-f9b4-46eb-b91f-20a36425c7d0/public_url" target="_blank"
+            rel="noopener" class="text-link">View credential <span>↗</span></a>
+        </div>
+      </article>
+      <article class="credential-card">
         <img src="solutions.png" alt="AWS Solutions Architect Badge" class="aws-badge">
-        <h3>AWS Certified Solutions Architect – Associate</h3>
-        <p>Covers designing practical systems on AWS.</p>
-        <a href="https://www.credly.com/badges/3bf98133-3b7c-454c-99ca-268a3b7a9dc5/public_url" target="_blank"
-          rel="noopener" class="btn">View Credential</a>
+        <div class="credential-copy">
+          <h3>AWS Certified Solutions Architect – Associate</h3>
+          <p>Designing practical, resilient systems on AWS.</p>
+          <a href="https://www.credly.com/badges/3bf98133-3b7c-454c-99ca-268a3b7a9dc5/public_url" target="_blank"
+            rel="noopener" class="text-link">View credential <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="contact-content">
+      <h2 id="contact-heading">LET'S WORK TOGETHER</h2>
+      <a class="contact-email" href="mailto:ughurkarim@g.ucla.edu">ughurkarim@g.ucla.edu</a>
+      <div class="social-icons contact-icons">
+      <a href="https://github.com/ughurkarim" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:ughurkarim@g.ucla.edu" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="social-icons footer-icons">
-      <a href="https://github.com/ughurkarim" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/ughurkarim" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i
-          class="fab fa-linkedin-in"></i></a>
-      <a href="mailto:ughurkarim@g.ucla.edu" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    </div>
+    <p class="copyright">Copyright © 2026 Ughur Karim. All Rights Reserved.</p>
   </footer>
 
   <button id="back-to-top" aria-label="Back to Top">

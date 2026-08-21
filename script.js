@@ -6,6 +6,14 @@ const navLinks = document.querySelector(".nav-links");
 const navLinkEls = document.querySelectorAll(".nav-links li a");
 const backToTopBtn = document.getElementById("back-to-top");
 const body = document.body;
+let pendingNavSection = "";
+let pendingNavTimeout;
+
+function setActiveNavLink(sectionId) {
+  navLinkEls.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${sectionId}`);
+  });
+}
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -17,6 +25,107 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 sections.forEach(section => observer.observe(section));
+
+const techRows = {
+  primary: [
+    { name: "Python", icon: "devicon-python-plain colored" },
+    { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+    { name: "C++", icon: "devicon-cplusplus-plain colored" },
+    { name: "C", icon: "devicon-c-plain colored" },
+    { name: "Java", icon: "devicon-java-plain colored" },
+    { name: "Swift", icon: "devicon-swift-plain colored" },
+    { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+    { name: "HTML", icon: "devicon-html5-plain colored" },
+    { name: "CSS", icon: "devicon-css3-plain colored" },
+    { name: "React", icon: "devicon-react-original colored" },
+    { name: "Next.js", image: "images/tech/nextjs.svg" },
+    { name: "React Native", icon: "devicon-react-original colored" },
+    { name: "Flask", icon: "devicon-flask-original" },
+    { name: "PyTorch", icon: "devicon-pytorch-original colored" }
+  ],
+  secondary: [
+    { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+    { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
+    { name: "Supabase", icon: "devicon-supabase-plain colored" },
+    { name: "AWS", image: "images/tech/aws.svg" },
+    { name: "Amazon S3", image: "images/tech/amazon-s3.svg" },
+    { name: "Amazon CloudFront", image: "images/tech/amazon-cloudfront.svg" },
+    { name: "Cloudflare", icon: "devicon-cloudflare-plain colored" },
+    { name: "Vercel", icon: "devicon-vercel-original" },
+    { name: "Git", icon: "devicon-git-plain colored" },
+    { name: "Unix", icon: "devicon-unix-original" },
+    { name: "Figma", icon: "devicon-figma-plain colored" },
+    { name: "Expo", icon: "devicon-expo-original" },
+    { name: "Prisma", icon: "devicon-prisma-original" },
+    { name: "NextAuth", image: "images/tech/nextauth.svg" },
+    { name: "NumPy", icon: "devicon-numpy-plain colored" },
+    { name: "pandas", icon: "devicon-pandas-plain colored" },
+    { name: "Qt", icon: "devicon-qt-original colored" }
+  ]
+};
+
+function createTechSequence(technologies, isDuplicate = false) {
+  const list = document.createElement("ul");
+  list.className = "tech-sequence";
+
+  if (isDuplicate) {
+    list.setAttribute("aria-hidden", "true");
+  }
+
+  technologies.forEach(technology => {
+    const item = document.createElement("li");
+    item.className = "tech-item";
+    item.title = technology.name;
+
+    if (!isDuplicate) {
+      item.tabIndex = 0;
+      item.setAttribute("aria-label", technology.name);
+    }
+
+    const card = document.createElement("span");
+    card.className = "tech-tile";
+    card.setAttribute("aria-hidden", "true");
+
+    const icon = document.createElement(technology.image ? "img" : technology.icon ? "i" : "span");
+    icon.className = technology.image
+      ? "tech-icon-image"
+      : technology.icon
+        ? `tech-icon ${technology.icon}`
+        : "tech-icon tech-icon-fallback";
+    icon.setAttribute("aria-hidden", "true");
+
+    if (technology.image) {
+      icon.src = technology.image;
+      icon.alt = "";
+      icon.decoding = "async";
+    }
+
+    if (technology.fallback) {
+      icon.textContent = technology.fallback;
+    }
+
+    const name = document.createElement("span");
+    name.className = "tech-name";
+    name.textContent = technology.name;
+    name.setAttribute("aria-hidden", "true");
+
+    card.append(icon);
+    item.append(card, name);
+    list.append(item);
+  });
+
+  return list;
+}
+
+document.querySelectorAll("[data-tech-row]").forEach(track => {
+  const technologies = techRows[track.dataset.techRow];
+  if (!technologies) return;
+
+  track.append(
+    createTechSequence(technologies),
+    createTechSequence(technologies, true)
+  );
+});
 
 const words = [
   "learning new things.",
@@ -34,6 +143,11 @@ let isDeleting = false;
 function typeEffect() {
   if (!typingText) return;
 
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    typingText.textContent = words[0];
+    return;
+  }
+
   const currentWord = words[wordIndex];
   if (isDeleting) {
     typingText.textContent = currentWord.substring(0, charIndex - 1);
@@ -45,7 +159,7 @@ function typeEffect() {
 
   if (!isDeleting && charIndex === currentWord.length) {
     isDeleting = true;
-    setTimeout(typeEffect, 1200);
+    setTimeout(typeEffect, 1800);
     return;
   }
 
@@ -54,7 +168,7 @@ function typeEffect() {
     wordIndex = (wordIndex + 1) % words.length;
   }
 
-  setTimeout(typeEffect, isDeleting ? 50 : 100);
+  setTimeout(typeEffect, isDeleting ? 42 : 78);
 }
 
 window.addEventListener("DOMContentLoaded", typeEffect);
@@ -106,7 +220,19 @@ if (menuToggle && navLinks) {
   });
 
   navLinkEls.forEach(link => {
-    link.addEventListener("click", () => setMenuState(false));
+    link.addEventListener("click", () => {
+      pendingNavSection = link.hash.slice(1);
+      clearTimeout(pendingNavTimeout);
+      setMenuState(false);
+      setActiveNavLink(pendingNavSection);
+
+      pendingNavTimeout = setTimeout(() => {
+        if (window.location.hash === link.hash) {
+          setActiveNavLink(pendingNavSection);
+        }
+        pendingNavSection = "";
+      }, 1500);
+    });
   });
 
   document.addEventListener("click", event => {
@@ -150,20 +276,20 @@ function updateBackToTop() {
 
 function updateActiveNavLink() {
   let current = "";
+  const navbar = document.querySelector(".navbar");
+  const activationLine = (navbar?.getBoundingClientRect().bottom || 64) + 72;
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
-    if (window.scrollY >= sectionTop) {
+    if (section.getBoundingClientRect().top <= activationLine) {
       current = section.getAttribute("id");
     }
   });
 
-  navLinkEls.forEach(link => {
-    link.classList.remove("active");
-    if (current && link.getAttribute("href").includes(current)) {
-      link.classList.add("active");
-    }
-  });
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+    current = sections[sections.length - 1]?.getAttribute("id") || current;
+  }
+
+  setActiveNavLink(pendingNavSection || current);
 }
 
 window.addEventListener("scroll", () => {
